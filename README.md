@@ -16,9 +16,14 @@ Pour cela vous aurez besoin de télécharger le logiciel [Processing](https://pr
 
 Dans l'exemple [Dimmer](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Dimmer), le PC envoie un nombre compris entre 0 et 255.
 
-La carte Arduino récupère cette valeur, puis l'utilse fait va
+La carte Arduino récupère cette valeur, puis l'utilse pour faire varier l'intensité lumineuse de la LED branché à une sortie PWM.
 
 Pour tester ce code, il suffit de programmer la carte Arduino et de programmer le PC avec le code Processing qui se trouve entre les lignes 46 et 82 (un simple copier/coller et c'est partie)
+
+Voir également :
+
+* [U=RI | Qu'est-ce que la PWM?](https://www.youtube.com/watch?v=CSReyYwbGRY&ab_channel=U%EA%9E%8ARI)
+* [Principe du signal PWM avec l'arduino](https://www.youtube.com/watch?v=U4Xt0-pDYhc&ab_channel=electrotoile)
 
 ---
 
@@ -105,11 +110,15 @@ void draw() {
 
 ```
 
+<HR size=1 align=center width="70%">
+
 #### Animez un graphique
 
-En se servant des éléments trouvés dans l'exemple "[Arm](https://processing.org/examples/arm.html)", nous allons pouvoir animer des graphismes selon notre goût ;-)
+En se servant des éléments trouvés dans l'exemple "[Arm](https://processing.org/examples/arm.html)", nous allons pouvoir animer des graphismes selon notre imagination ;-)
 
-voir l'affichage d'une [barre horizontale](Processing/BarreHorizontale/BarreHorizontale.pde) :
+Démo de l'affichage d'une [barre horizontale](Processing/BarreHorizontale/BarreHorizontale.pde) :
+
+![Gif de la barre horizontale](Images/demo_barre_horiz.gif)
 
 ---
 
