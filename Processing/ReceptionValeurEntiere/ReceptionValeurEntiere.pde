@@ -1,49 +1,58 @@
 /**
- Voici ce que le programme affichera si la carte Arduino envoie au PC la chaîne "1023\r\n"
- 
- =====================
- 1: 1023
- 
- [0] '1'
- [1] '0'
- [2] '2'
- [3] '3'
- [4] ''
- [5] '
- '
- soit en valeur decimale:
- 49
- 48
- 50
- 51
- 13
- 10
- ---
- 2: 1023
- [0] '1'
- [1] '0'
- [2] '2'
- [3] '3'
- soit en valeur decimale:
- 49
- 48
- 50
- 51
- ---
- 3: 1023
- [0] '1'
- [1] '0'
- [2] '2'
- [3] '3'
- soit en valeur decimale:
- 49
- 48
- 50
- 51
- ---
- nombre entier: 1023
- ou avec tout sur une seule ligne de code
- nombre entier: 1023
+ * @file ReceptionValeurEntiere.pde
+ * @author ArnauldDev
+ * @brief Affichage et décodage de la valeur transmise par Arduino
+ * @version 1.00
+ * @date 2021-02-20
+ * 
+ * @copyright Copyright (c) 2021, La Compagnie du Code <https://www.lacompagnieducode.org/>
+ *
+ *
+ * Voici ce que le programme affichera si la carte Arduino envoie au PC la chaîne "1023\r\n"
+ * 
+ * =====================
+ * 1: 1023
+ * 
+ * [0] '1'
+ * [1] '0'
+ * [2] '2'
+ * [3] '3'
+ * [4] ''
+ * [5] '
+ * '
+ * soit en valeur decimale:
+ * 49
+ * 48
+ * 50
+ * 51
+ * 13
+ * 10
+ * ---
+ * 2: 1023
+ * [0] '1'
+ * [1] '0'
+ * [2] '2'
+ * [3] '3'
+ * soit en valeur decimale:
+ * 49
+ * 48
+ * 50
+ * 51
+ * ---
+ * 3: 1023
+ * [0] '1'
+ * [1] '0'
+ * [2] '2'
+ * [3] '3'
+ * soit en valeur decimale:
+ * 49
+ * 48
+ * 50
+ * 51
+ * ---
+ * nombre entier: 1023
+ * ou avec tout sur une seule ligne de code
+ * nombre entier: 1023
  */
 
 import processing.serial.*;
@@ -52,6 +61,7 @@ import processing.serial.*;
 Serial mon_port_serie;  // créer un objet de la classe Serial pour la communication sur le port série
 
 void setup() {
+  // Modifiez ici le numéro du port COM de votre carte Arduino
   mon_port_serie = new Serial(this, "COM6", 9600); // classe d'envoi et de réception de données via le protocole de communication série <https://processing.org/reference/libraries/serial/index.html>
 
   size(200, 130); // taille de la fenêtre avec width = largeur et height = hauteur

@@ -4,13 +4,29 @@ Lors du stage de "**_[La Compagnie du Code](https://www.lacompagnieducode.org/)_
 
 Vous retrouverez ici l'exemple du programme [Processing](https://processing.org/) en Java, ainsi que le [code Arduino](Arduino/AnalogReadSerial/AnalogReadSerial.ino) en C++ traduit pour vous en français.
 
+---
+
 ## Réaliser un programme sur ordinateur qui interagi avec la carte Arduino
 
 Pour cela vous aurez besoin de télécharger le logiciel [Processing](https://processing.org/download/), ainsi que l'IDE [Arduino](https://www.arduino.cc/en/software).
 
+---
+
+### Du PC vers Arduino
+
+Dans l'exemple [Dimmer](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Dimmer), le PC envoie un nombre compris entre 0 et 255.
+
+La carte Arduino récupère cette valeur, puis l'utilse fait va
+
+Pour tester ce code, il suffit de programmer la carte Arduino et de programmer le PC avec le code Processing qui se trouve entre les lignes 46 et 82 (un simple copier/coller et c'est partie)
+
+---
+
+### De la carte Arduino au PC
+
 Programmez ensuite votre carte [Arduino Uno](https://store.arduino.cc/arduino-uno-rev3) avec le microprogramme (Firmware en anglais) : [Exemples > 01.Basics > AnalogReadSerial](https://www.arduino.cc/en/Tutorial/BuiltInExamples/AnalogReadSerial)
 
-### Premier pas, décodage de la valeur transmise par Arduino
+#### Premier pas, décodage de la valeur transmise par Arduino
 
 Le plus difficile est de comprendre **[Les variables](https://fr.flossmanuals.net/processing/les-variables/)** et comment les convertir dans le bon format pour pouvoir les utiliser...
 
@@ -47,7 +63,8 @@ import processing.serial.*;
 Serial mon_port_serie;  // créer un objet de la classe Serial pour la communication sur le port série
 
 void setup() {
-  mon_port_serie = new Serial(this, "COM6", 9600); // classe d'envoi et de réception de données via le protocole de communication série <https://processing.org/reference/libraries/serial/index.html>
+  // Modifiez ici le numéro du port COM de votre carte Arduino (depuis les touches [Windows] + [R]: devmgmt.msc)
+  mon_port_serie = new Serial(this, "COM3", 9600); // classe d'envoi et de réception de données via le protocole de communication série <https://processing.org/reference/libraries/serial/index.html>
 
   size(200, 130); // taille de la fenêtre avec width = largeur et height = hauteur
   textSize(32); // définit la taille actuelle de la police de caractère dans la fenêtre graphique <https://processing.org/reference/textSize_.html>
@@ -78,7 +95,7 @@ void draw() {
     }
     /* Fin de l'analyse des données reçues */
 
-    nombre_entier = Integer.parseInt(trim(message_recu_en_ascii)); // enlever les espaces en debut et fin de String, ainsi que les caractères spéciaux '\r' '\n'
+    int nombre_entier = Integer.parseInt(trim(message_recu_en_ascii)); // enlever les espaces en debut et fin de String, ainsi que les caractères spéciaux '\r' '\n'
     print("nombre entier: ");
     println(nombre_entier);
 
@@ -88,8 +105,17 @@ void draw() {
 
 ```
 
+#### Animez un graphique
+
+En se servant des éléments trouvés dans l'exemple "[Arm](https://processing.org/examples/arm.html)", nous allons pouvoir animer des graphismes selon notre goût ;-)
+
+voir l'affichage d'une [barre horizontale](Processing/BarreHorizontale/BarreHorizontale.pde) :
+
+---
+
 ## Liens Internet
 
 * Visionnez la vidéo [Processing et Arduino en français](https://www.youtube.com/watch?v=S3HpkjcoqCM&ab_channel=PlaisirArduino) (10 min 52 sec)
 * [Convertisseur ASCII](https://www.dcode.fr/code-ascii)
 * [Codage des nombres](https://fr.wikibooks.org/wiki/Fonctionnement_d%27un_ordinateur/Codage_des_nombres)
+* [Les tags définis par javadoc](https://www.jmdoudoux.fr/java/dej/chap-javadoc.htm)
