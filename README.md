@@ -1,12 +1,14 @@
-# Stage électronique-robotique
+# Stage Electronique et Robotique
 
-Lors du stage de "**_[La Compagnie du Code](https://www.lacompagnieducode.org/)_**", nous avons entre autre découvert comment faire communiquer la carte Arduino avec l'ordinateur.
+![Image-Electronique-Robotique](Images/bandeau-lacompagnieducode-elec-robot.png)
+
+Lors du stage de programmation sur le thême _électronique et robotique_ organisé par "**_[La Compagnie du Code](https://www.lacompagnieducode.org/)_**", nous avons entre autres découvert comment faire communiquer la carte Arduino avec l'ordinateur.
 
 Vous retrouverez ici l'exemple du programme [Processing](https://processing.org/) en Java, ainsi que le [code Arduino](Arduino/AnalogReadSerial/AnalogReadSerial.ino) en C++ traduit pour vous en français.
 
 ---
 
-## Réaliser un programme sur ordinateur qui interagi avec la carte Arduino
+## Réaliser un programme sur ordinateur qui interagit avec la carte Arduino
 
 Pour cela vous aurez besoin de télécharger le logiciel [Processing](https://processing.org/download/), ainsi que l'IDE [Arduino](https://www.arduino.cc/en/software).
 
@@ -16,9 +18,9 @@ Pour cela vous aurez besoin de télécharger le logiciel [Processing](https://pr
 
 Dans l'exemple [Dimmer](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Dimmer), le PC envoie un nombre compris entre 0 et 255.
 
-La carte Arduino récupère cette valeur, puis l'utilse pour faire varier l'intensité lumineuse de la LED branché à une sortie PWM.
+La carte Arduino récupère cette valeur, puis l'utilise pour faire varier l'intensité lumineuse de la LED branchée à une sortie PWM.
 
-Pour tester ce code, il suffit de programmer la carte Arduino et de programmer le PC avec le code Processing qui se trouve entre les lignes 46 et 82 (un simple copier/coller et c'est partie)
+Pour tester ce code, il suffit de programmer la carte Arduino et de programmer le PC avec le code Processing qui se trouve dans le même fichier Arduino `Dimmer.ino` entre les lignes 46 et 82, un simple copier/coller dans l'environnement Processing et c'est partie ;-)
 
 Voir également :
 
@@ -80,7 +82,7 @@ void draw() {
   if (mon_port_serie.available() > 0) {
     String message_recu_en_ascii = mon_port_serie.readStringUntil('\n'); // lisez-le et stockez-le dans val <https://processing.org/reference/libraries/serial/Serial_readStringUntil_.html>
 
-    // Renouvèlement de la couleur de l'arrière-plan de la fenêtre, permet d'effacer son contenu ;-) 
+    // Renouvellement de la couleur de l'arrière-plan de la fenêtre, permet d'effacer son contenu ;-) 
     background(0); // définit la couleur utilisée pour l'arrière-plan de la fenêtre, 0 = noir et 255 <https://processing.org/reference/background_.html>
 
     /* Debut analyse des données reçues : */
@@ -100,11 +102,11 @@ void draw() {
     }
     /* Fin de l'analyse des données reçues */
 
-    int nombre_entier = Integer.parseInt(trim(message_recu_en_ascii)); // enlever les espaces en debut et fin de String, ainsi que les caractères spéciaux '\r' '\n'
+    int nombre_entier = Integer.parseInt(trim(message_recu_en_ascii)); // enlever les espaces en début et fin de String, ainsi que les caractères spéciaux '\r' '\n'
     print("nombre entier: ");
     println(nombre_entier);
 
-    text(nombre_entier, 10, 30); // affichage de la valeur numérique dans la fenêtre graphique
+    text(nombre_entier, 60, 70); // affichage de la valeur numérique dans la fenêtre graphique
   }
 }
 
