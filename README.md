@@ -4,13 +4,25 @@
 
 Lors du stage de programmation sur le thême _électronique et robotique_ organisé par "**_[La Compagnie du Code](https://www.lacompagnieducode.org/)_**", nous avons entre autres découvert comment faire communiquer la carte Arduino avec l'ordinateur.
 
-Vous retrouverez ici l'exemple du programme [Processing](https://processing.org/) en Java, ainsi que le [code Arduino](Arduino/AnalogReadSerial/AnalogReadSerial.ino) en C++ traduit pour vous en français.
+Vous retrouverez ici les exemples des programmes [Processing](https://processing.org/) en Java, ainsi que le [code Arduino](Arduino/AnalogReadSerial/AnalogReadSerial.ino) en C++ traduit pour vous en français :
+
+
+- [Réaliser un programme sur ordinateur qui interagit avec la carte Arduino](#réaliser-un-programme-sur-ordinateur-qui-interagit-avec-la-carte-arduino)
+  - [Du PC vers Arduino](#du-pc-vers-arduino)
+  - [De la carte Arduino au PC](#de-la-carte-arduino-au-pc)
+    - [Premier pas, décodage de la valeur transmise par Arduino](#premier-pas-décodage-de-la-valeur-transmise-par-arduino)
+    - [Animez un graphique](#animez-un-graphique)
+- [Liens Internet](#liens-internet)
+
+<br/>
 
 ---
 
 ## Réaliser un programme sur ordinateur qui interagit avec la carte Arduino
 
 Pour cela vous aurez besoin de télécharger le logiciel [Processing](https://processing.org/download/), ainsi que l'IDE [Arduino](https://www.arduino.cc/en/software).
+
+<br/>
 
 ---
 
@@ -20,7 +32,17 @@ Dans l'exemple [Dimmer](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Dimme
 
 La carte Arduino récupère cette valeur, puis l'utilise pour faire varier l'intensité lumineuse de la LED branchée à une sortie PWM.
 
-Pour tester ce code, il suffit de programmer la carte Arduino et de programmer le PC avec le code Processing qui se trouve dans le même fichier Arduino `Dimmer.ino` entre les lignes 46 et 82, un simple copier/coller dans l'environnement Processing et c'est partie ;-)
+Vous aurez besoin des matériaux suivants :
+
+|                  La carte Arduino Uno                  |                      une LED                      |              une résistance<br>ici 220 ohms             |
+|:------------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------------:|
+| <img src="Images/ArduinoUno_Fritzing.png" width="400"> | <img src="Images/RedLED_Fritzing.png" width="70"> | <img src="Images/Resistor220_Fritzing.png" width="200"> |
+
+<br/>
+
+Pour tester ce code, il suffit de programmer la carte Arduino et de programmer le PC avec [le code Processing](Processing/DimmerPcVersArduino/DimmerPcVersArduino.pde) qui se trouve dans le même fichier Arduino `Dimmer.ino` entre les lignes 46 et 82, un simple copier/coller dans l'environnement Processing et c'est partie ;-)
+
+![Code Processing](Images/demo_dimmer.gif)
 
 Voir également :
 
@@ -28,6 +50,8 @@ Voir également :
 * [Principe du signal PWM avec l'arduino](https://www.youtube.com/watch?v=U4Xt0-pDYhc&ab_channel=electrotoile)
 
 ---
+
+<br/>
 
 ### De la carte Arduino au PC
 
